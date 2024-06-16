@@ -1,4 +1,5 @@
 # importa a classe flask do modulo flask
+import json
 from flask import Flask, render_template
 
 from validate_docbr import CPF, CNPJ
@@ -33,15 +34,18 @@ def contatos():
 def produtos(): 
 
     # o contexto serviria para trazer dados de fora (tipo bdd)
-
     # lista onde cada produto é um dicionário
-    lista_produtos = [
-        {'nome': 'coca cola', 'descricao': 'bebida'},
-        {'nome': 'chips', 'descricao': 'saguadinho'},
-        {'nome': 'bubalu', 'descricao': 'chicletchy'}
-    ]
-    # dá um nome pra acessar no html
-    return render_template('produtos.html', produtos=lista_produtos)
+    # lista_produtos = [
+    #     {'nome': 'coca cola', 'descricao': 'bebida'},
+    #     {'nome': 'chips', 'descricao': 'saguadinho'},
+    #     {'nome': 'bubalu', 'descricao': 'chicletchy'}
+    # ]
+
+    with open('projeto_lp3/produtos.json', 'r', encoding='utf8') as arquivo:
+        lista_produtos = json.load(arquivo)
+
+        # dá um nome pra acessar no html
+        return render_template('produtos.html', produtos=lista_produtos)
 
 
 
