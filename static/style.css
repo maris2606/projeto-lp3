@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 2 1 20vh;
+    
+}
+
+section {
+    flex: 4 1 70vh;
+}
+
+header {
+    flex: 1 1 10vh;
+}

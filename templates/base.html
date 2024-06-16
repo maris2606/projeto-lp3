@@ -8,11 +8,14 @@
         {% block title %} title {% endblock %}
     </title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1></h1>
+        {% block title_header %}
+    
+        {% endblock %}
+
         <nav>
             <a href="/contatos">contatos</a> 
             <a href="/gerar-cpf">cpf</a> 
@@ -22,9 +25,12 @@
         </nav>
     </header>
 
-    {% block content %}
+    <section>
+        {% block content %}
     
-    {% endblock %}
+        {% endblock %}
+    </section>
+    
 
     <footer>
         <p>Desenvolvido por <br>Marisa Mayumi</p>
