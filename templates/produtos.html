@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+
+<!-- agora consegue trazer/acessar produtos do python-->
+<div class="produtos-container">
+    {% if produtos %}
+        {% for produto in produtos%}
+
+        <div class="produto">
+            <h2>{{produto.nome}}</h2>
+            <p>{{produto.descricao}}</p>
+        </div>
+
+        {% endfor %}
+    {% else %}
+        <h2>nenhum produto cadastrado</h2>
+    {% endif %}
+</div>
+{% endblock %}
