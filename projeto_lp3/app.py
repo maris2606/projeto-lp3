@@ -27,7 +27,16 @@ def home():
 # página contatos - /contatos
 @app.route("/contatos")
 def contatos():
-    return render_template('contatos.html')
+    
+    with open('projeto_lp3/lojas.json', 'r', encoding='utf8') as arquivo:
+        lista_lojas = json.load(arquivo)
+
+        lojas_ZN = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona norte']
+        lojas_ZL = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona leste']
+        lojas_ZS = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona sul']
+        lojas_ZO = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona oeste']
+
+        return render_template('contatos.html', lojas_ZL = lojas_ZL, lojas_ZN = lojas_ZN, lojas_ZO = lojas_ZO, lojas_ZS = lojas_ZS)
 
 # página de produtos - /produtos
 @app.route("/produtos")
@@ -43,9 +52,10 @@ def produtos():
 
     with open('projeto_lp3/produtos.json', 'r', encoding='utf8') as arquivo:
         lista_produtos = json.load(arquivo)
+        produtos = [{**produto, 'preco': format(produto['preco'], '.2f')} for produto in lista_produtos]
 
         # dá um nome pra acessar no html
-        return render_template('produtos.html', produtos=lista_produtos)
+        return render_template('produtos.html', produtos=produtos)
 
 
 
@@ -64,3 +74,6 @@ def cpf():
 def cnpj(): 
     cnpj = CNPJ()
     return render_template('gerar-cnpj.html', cnpj_gerado = cnpj.generate(True))
+
+# rodar direto por aqui
+app.run()

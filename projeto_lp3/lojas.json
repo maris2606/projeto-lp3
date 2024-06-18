@@ -1,0 +1,52 @@
+[
+    {
+    "nome": "Loja A",
+    "endereco": "Rua A, 123",
+    "zona": "Zona Sul",
+    "telefone": "(11) 91234-5678",
+    "email": "lojaA@example.com"
+    },
+    {
+    "nome": "Loja B",
+    "endereco": "Avenida B, 456",
+    "zona": "Zona Oeste",
+    "telefone": "(11) 92345-6789",
+    "email": "lojaB@example.com"
+    },
+    {
+    "nome": "Loja C",
+    "endereco": "Rua C, 789",
+    "zona": "Zona Norte",
+    "telefone": "(11) 93456-7890",
+    "email": "lojaC@example.com"
+    },
+    {
+    "nome": "Loja D",
+    "endereco": "Rua D, 321",
+    "zona": "Zona Leste",
+    "telefone": "(11) 94567-8901",
+    "email": "lojaD@example.com"
+    },
+    {
+    "nome": "Loja E",
+    "endereco": "Avenida E, 654",
+    "zona": "Zona Sul",
+    "telefone": "(11) 95678-9012",
+    "email": "lojaE@example.com"
+    },
+    {
+    "nome": "Loja F",
+    "endereco": "Rua F, 987",
+    "zona": "Zona Oeste",
+    "telefone": "(11) 96789-0123",
+    "email": "lojaF@example.com"
+    },
+    {
+    "nome": "Loja G",
+    "endereco": "Avenida G, 210",
+    "zona": "Zona Norte",
+    "telefone": "(11) 97890-1234",
+    "email": "lojaG@example.com"
+    }
+]
+  

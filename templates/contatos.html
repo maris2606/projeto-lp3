@@ -10,6 +10,78 @@
 
 {% block content %}
 
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, recusandae harum laboriosam ipsa dicta distinctio ipsum quidem aliquid vel nihil amet, assumenda, ducimus et tempora voluptatem id earum repellendus modi.</p>
+<div class="zonas-container">
+{% if lojas_ZL and lojas_ZN and lojas_ZO and lojas_ZS %}
+    <div>
+        <h2>Zona Norte:</h2>
+        {% for loja in lojas_ZN %}
+    
+            <div class="loja">
+                <h3>nome:</h3>
+                <p>&emsp; {{loja.nome}} </p>
+                <h3>endereco:</h3>
+                <p>&emsp; {{loja.endereco}} </p>
+                <h3>telefone:</h3>
+                <p>&emsp; {{loja.telefone}} </p>
+                <h3>email:</h3>
+                <p>&emsp; {{loja.email}} </p>
+            </div>
+    
+        {% endfor %}
+    </div>
+    
+    <div>
+        <h2>Zona Leste:</h2>
+        {% for loja in lojas_ZL %}
+    
+            <h3>nome:</h3>
+            <p>&emsp; {{loja.nome}} </p>
+            <h3>endereco:</h3>
+            <p>&emsp; {{loja.endereco}} </p>
+            <h3>telefone:</h3>
+            <p>&emsp; {{loja.telefone}} </p>
+            <h3>email:</h3>
+            <p>&emsp; {{loja.email}} </p>
+    
+        {% endfor %}
+    </div>
    
+    <div>
+        <h2>Zona Oeste:</h2>
+        {% for loja in lojas_ZO %}
+
+            <h3>nome:</h3>
+            <p>&emsp; {{loja.nome}} </p>
+            <h3>endereco:</h3>
+            <p>&emsp; {{loja.endereco}} </p>
+            <h3>telefone:</h3>
+            <p>&emsp; {{loja.telefone}} </p>
+            <h3>email:</h3>
+            <p>&emsp; {{loja.email}} </p>
+
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2>Zona Sul:</h2>
+        {% for loja in lojas_ZS %}
+
+            <h3>nome:</h3>
+            <p>&emsp; {{loja.nome}} </p>
+            <h3>endereco:</h3>
+            <p>&emsp; {{loja.endereco}} </p>
+            <h3>telefone:</h3>
+            <p>&emsp; {{loja.telefone}} </p>
+            <h3>email:</h3>
+            <p>&emsp; {{loja.email}} </p>
+
+        {% endfor %}
+    </div>
+
+{% else %}
+<h2>nenhuma loja registrada</h2>
+{% endif %}
+</div>
+
+
 {% endblock %}

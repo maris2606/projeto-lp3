@@ -21,7 +21,7 @@ header {
     flex: 2 1 10vh;  
     background-color: var(--roxo-escuro);
     color: var(--branco);
-    padding: 0 0 35px 50px;
+    padding: 20px 0 35px 50px;
 }
 
 nav {
@@ -102,4 +102,11 @@ footer {
 
 #produto-categoria{
     font-size: smaller;
+    line-height: 0;
+}
+
+.loja{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--lilas-claro);
 }
