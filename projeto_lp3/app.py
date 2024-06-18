@@ -35,8 +35,9 @@ def contatos():
         lojas_ZL = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona leste']
         lojas_ZS = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona sul']
         lojas_ZO = [loja for loja in lista_lojas if loja['zona'].lower() == 'zona oeste']
+        lojas_C = [loja for loja in lista_lojas if loja['zona'].lower() == 'centro']
 
-        return render_template('contatos.html', lojas_ZL = lojas_ZL, lojas_ZN = lojas_ZN, lojas_ZO = lojas_ZO, lojas_ZS = lojas_ZS)
+        return render_template('contatos.html', lojas_ZL = lojas_ZL, lojas_ZN = lojas_ZN, lojas_ZO = lojas_ZO, lojas_ZS = lojas_ZS, lojas_C= lojas_C)
 
 # página de produtos - /produtos
 @app.route("/produtos")

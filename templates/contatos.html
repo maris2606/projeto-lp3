@@ -12,28 +12,13 @@
 
 <div class="zonas-container">
 {% if lojas_ZL and lojas_ZN and lojas_ZO and lojas_ZS %}
-    <div>
-        <h2>Zona Norte:</h2>
+    
+    <h2>Zona Norte:</h2>
+    <hr>
+    <div class="zona">
         {% for loja in lojas_ZN %}
     
-            <div class="loja">
-                <h3>nome:</h3>
-                <p>&emsp; {{loja.nome}} </p>
-                <h3>endereco:</h3>
-                <p>&emsp; {{loja.endereco}} </p>
-                <h3>telefone:</h3>
-                <p>&emsp; {{loja.telefone}} </p>
-                <h3>email:</h3>
-                <p>&emsp; {{loja.email}} </p>
-            </div>
-    
-        {% endfor %}
-    </div>
-    
-    <div>
-        <h2>Zona Leste:</h2>
-        {% for loja in lojas_ZL %}
-    
+        <div class="loja">
             <h3>nome:</h3>
             <p>&emsp; {{loja.nome}} </p>
             <h3>endereco:</h3>
@@ -42,14 +27,36 @@
             <p>&emsp; {{loja.telefone}} </p>
             <h3>email:</h3>
             <p>&emsp; {{loja.email}} </p>
+        </div>
+    
+        {% endfor %}
+    </div>
+
+    <h2>Zona Leste:</h2>
+    <hr>
+    <div class="zona">
+        {% for loja in lojas_ZL %}
+    
+        <div class="loja">
+            <h3>nome:</h3>
+            <p>&emsp; {{loja.nome}} </p>
+            <h3>endereco:</h3>
+            <p>&emsp; {{loja.endereco}} </p>
+            <h3>telefone:</h3>
+            <p>&emsp; {{loja.telefone}} </p>
+            <h3>email:</h3>
+            <p>&emsp; {{loja.email}} </p>
+        </div>
     
         {% endfor %}
     </div>
    
-    <div>
-        <h2>Zona Oeste:</h2>
+    <h2>Zona Oeste:</h2>
+    <hr>
+    <div class="zona">
         {% for loja in lojas_ZO %}
 
+        <div class="loja">
             <h3>nome:</h3>
             <p>&emsp; {{loja.nome}} </p>
             <h3>endereco:</h3>
@@ -58,14 +65,36 @@
             <p>&emsp; {{loja.telefone}} </p>
             <h3>email:</h3>
             <p>&emsp; {{loja.email}} </p>
+        </div>
 
         {% endfor %}
     </div>
 
-    <div>
-        <h2>Zona Sul:</h2>
+    <h2>Centro:</h2>
+    <hr>
+    <div class="zona">
+        {% for loja in lojas_C %}
+
+        <div class="loja">
+            <h3>nome:</h3>
+            <p>&emsp; {{loja.nome}} </p>
+            <h3>endereco:</h3>
+            <p>&emsp; {{loja.endereco}} </p>
+            <h3>telefone:</h3>
+            <p>&emsp; {{loja.telefone}} </p>
+            <h3>email:</h3>
+            <p>&emsp; {{loja.email}} </p>
+        </div>
+
+        {% endfor %}
+    </div>
+
+    <h2>Zona Sul:</h2>
+    <hr>
+    <div class="zona">
         {% for loja in lojas_ZS %}
 
+        <div class="loja">
             <h3>nome:</h3>
             <p>&emsp; {{loja.nome}} </p>
             <h3>endereco:</h3>
@@ -74,9 +103,12 @@
             <p>&emsp; {{loja.telefone}} </p>
             <h3>email:</h3>
             <p>&emsp; {{loja.email}} </p>
+        </div>
 
         {% endfor %}
     </div>
+
+
 
 {% else %}
 <h2>nenhuma loja registrada</h2>

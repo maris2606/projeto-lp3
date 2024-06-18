@@ -72,9 +72,10 @@ footer {
 
 .produto{
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
     flex: 1 1 10vw;
     max-width: 10vw;
+    min-width: max-content;
     padding: 15px;
     background-color: var(--lilas-claro);
     border-radius: 10px;
@@ -100,13 +101,31 @@ footer {
     font-size: larger;
 }
 
+#produto-marca{
+    line-height: 5px;
+}
+
 #produto-categoria{
     font-size: smaller;
     line-height: 0;
 }
 
+.zona{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+    gap: 25px;
+
+}
+
 .loja{
-    padding: 15px;
-    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 15vw;
+    max-width: 15vw;
+    min-width: max-content;
+    padding: 25px;
+    border-radius: 10px;
     background-color: var(--lilas-claro);
+    line-height: 5px;
 }

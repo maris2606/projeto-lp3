@@ -42,11 +42,32 @@
     "email": "lojaF@example.com"
     },
     {
-    "nome": "Loja G",
-    "endereco": "Avenida G, 210",
-    "zona": "Zona Norte",
-    "telefone": "(11) 97890-1234",
-    "email": "lojaG@example.com"
+        "nome": "Loja G",
+        "endereco": "Avenida G, 210",
+        "zona": "Zona Norte",
+        "telefone": "(11) 97890-1234",
+        "email": "lojaG@example.com"
+    },
+    {
+        "nome": "Loja H",
+        "endereco": "Rua H, 753",
+        "zona": "Centro",
+        "telefone": "(11) 98901-2345",
+        "email": "lojaH@example.com"
+    },
+    {
+        "nome": "Loja I",
+        "endereco": "Avenida I, 846",
+        "zona": "Centro",
+        "telefone": "(11) 99012-3456",
+        "email": "lojaI@example.com"
+    },
+    {
+        "nome": "Loja J",
+        "endereco": "Rua J, 579",
+        "zona": "Centro",
+        "telefone": "(11) 90123-4567",
+        "email": "lojaJ@example.com"
     }
 ]
   
