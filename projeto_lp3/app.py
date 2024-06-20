@@ -58,7 +58,9 @@ def produtos():
         # dá um nome pra acessar no html
         return render_template('produtos.html', produtos=produtos)
 
-
+@app.route("/entre-em-contato")
+def entre_em_contato():
+    return render_template('entre-em-contato.html')
 
 
 @app.route("/servicos")
@@ -75,6 +77,21 @@ def cpf():
 def cnpj(): 
     cnpj = CNPJ()
     return render_template('gerar-cnpj.html', cnpj_gerado = cnpj.generate(True))
+
+@app.route("/politica_privacidade")
+def politica_privacidade():
+
+    return render_template('politica-privacidade.html')
+
+@app.route("/termos_uso")
+def termos_uso():
+
+    return render_template('termos-uso.html')
+
+@app.route("/como_utilizar")
+def como_utilizar():
+
+    return render_template('como-utilizar.html')
 
 # rodar direto por aqui
 app.run()

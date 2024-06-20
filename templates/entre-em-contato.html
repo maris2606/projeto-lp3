@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Entre em contato{% endblock %}
+
+{% block header %}
+
+<h1>Entre em contato</h1>   
+
+{% endblock %}
+
+{% block content %}
+
+<h3>Entre em contato conosco:</h3>
+
+<div class="form-contato">
+
+    <form action="" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="mensagem">Mensagem:</label>
+        <input type="email" name="mensagem" id="mensagem">
+
+        <button class="enviar-form-contato" type="submit">enviar</button>
+    </form>
+</div>
+
+{% endblock %}

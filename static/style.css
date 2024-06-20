@@ -129,3 +129,43 @@ footer {
     background-color: var(--lilas-claro);
     line-height: 5px;
 }
+
+.links-footer{
+    display: flex;
+    width: 30%;
+    flex-direction: row wrap;
+    list-style: none;
+    padding: 15px 0;
+    justify-content: space-between;
+}
+
+
+.links-footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.links-footer a:hover{
+    font-weight: 700;
+}
+
+.form-contato{
+    display: flex;
+    flex-direction: column wrap;
+    flex: 1 1 30%;
+    max-width: 30%;
+    
+}
+
+.form-contato input{
+    display: flex;
+    flex: 1 1 30%;
+    width: 500px;
+    margin: 15px;
+    
+}
+
+.enviar-form-contato{
+    
+}
+
