@@ -16,7 +16,7 @@
 
 {% block content %}
 
-<h3>Cadastrar produtos:</h3>
+<h2>Cadastrar produtos:</h2>
 
 <div class="form">
 
@@ -25,8 +25,17 @@
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
 
-        <label for="descricao">Descrição:</label>
-        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" id="marca">
+
+        <label for="categoria">Categoria:</label>
+        <input type="text" name="categoria" id="categoria">
+
+        <label for="preco">Preço:</label>
+        <input type="number" name="preco" id="preco">
+        
+        <!-- <label for="descricao">Descrição:</label>
+        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea> -->
 
         
         <button class="enviar-form" type="submit">enviar</button>

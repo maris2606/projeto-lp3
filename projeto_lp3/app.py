@@ -1,6 +1,6 @@
 # importa a classe flask do modulo flask
 import json
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 from validate_docbr import CPF, CNPJ
 
@@ -40,6 +40,12 @@ def contatos():
         return render_template('contatos.html', lojas_ZL = lojas_ZL, lojas_ZN = lojas_ZN, lojas_ZO = lojas_ZO, lojas_ZS = lojas_ZS, lojas_C= lojas_C)
 
 # página de produtos - /produtos
+lista_produtos = [
+        {'nome': 'coca cola', 'descricao': 'bebida'},
+        {'nome': 'chips', 'descricao': 'saguadinho'},
+        {'nome': 'bubalu', 'descricao': 'chicletchy'}
+    ]
+
 @app.route("/produtos")
 def produtos(): 
 
@@ -50,6 +56,7 @@ def produtos():
     #     {'nome': 'chips', 'descricao': 'saguadinho'},
     #     {'nome': 'bubalu', 'descricao': 'chicletchy'}
     # ]
+    # return render_template('produtos.html', produtos=lista_produtos)
 
     with open('projeto_lp3/produtos.json', 'r', encoding='utf8') as arquivo:
         lista_produtos = json.load(arquivo)
@@ -96,6 +103,21 @@ def como_utilizar():
 @app.route("/produtos/cadastro")
 def cadastro_produto():
     return render_template('cadastro-produto.html')
+
+@app.route("/produtos", methods=['POST'])
+def salvar_produto():
+    nome = request.form['nome']
+    # descricao = request.form['descricao']
+    marca = request.form['marca']
+    categoria = request.form['categoria']
+    preco = request.form['preco']
+
+    # produto = {'nome': nome, 'descricao':descricao}
+    produto = {'nome': nome, 'marca':marca, }
+    lista_produtos.append(produto)
+
+    return render_template('produtos.html', produtos=lista_produtos)
+
 
 # rodar direto por aqui
 app.run()
