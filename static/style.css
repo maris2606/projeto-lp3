@@ -5,6 +5,7 @@
     --roxo-vibrante: #6A20FA;
     --roxo: #6E3ECF;
     --branco: #FFFF;
+    --lilas-medio: #8765ca;
     --lilas-claro: #D2BDF4;
 }
 
@@ -13,24 +14,23 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    /* background: linear-gradient(135deg, #1a23a3,#14858d, #501388, #6810a3, #9b1372); */
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-header {
+.header-base {
     flex: 2 1 10vh;  
     background-color: var(--roxo-escuro);
     color: var(--branco);
     padding: 20px 0 35px 50px;
 }
 
-nav {
+.nav-base {
     display: flex;
     flex-flow: row wrap;
     gap: 15px;
 }
 
-nav a {
+.nav-base a {
     flex: 1 1 min-content;
     max-width: max-content;
     padding: 5px 10px;
@@ -41,13 +41,13 @@ nav a {
     background-color: var(--roxo);
 }
 
-nav a:hover {
+.nav-base a:hover {
     background-color: var(--roxo-vibrante);
 }
 
 section {
-    flex: 4 1 100vh;
-    padding: 10px 50px;
+    flex: 1 1 100vh;
+    padding: 0 50px;
     background-color: var(--branco);
 }
 
@@ -60,7 +60,7 @@ footer {
     color: var(--branco);
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 35px 0  0 15px;
 }
 
 .produtos-container{
@@ -110,6 +110,35 @@ footer {
     line-height: 0;
 }
 
+.nav-produtos {
+    display: flex;
+    flex: 1 1 5vh;
+    flex-flow: row wrap;
+    gap: 15px;
+    background-color: var(--roxo-medio);
+    align-content: center;
+    justify-content: end;
+    padding-inline: 40px;
+}
+
+.nav-produtos a {
+    flex: 1 1 min-content;
+    max-width: max-content;
+    height: min-content;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--branco);
+    transition: background-color 300ms;
+    background-color: var(--lilas-medio);
+}
+
+.nav-produtos a:hover {
+    background-color: var(--lilas);
+}
+
+
 .zona{
     display: flex;
     flex-flow: row wrap;
@@ -149,23 +178,35 @@ footer {
     font-weight: 700;
 }
 
-.form-contato{
-    display: flex;
-    flex-direction: column wrap;
+
+.enviar-form{
+    background-color: var(--roxo);
+    padding: 5px 10px;
+    transition: background-color 300ms;
+    border: none;
+    border-radius: 5px;
+    color: var(--branco);
+    font-size: medium;
+}
+
+.enviar-form:hover{
+    background-color: var(--roxo-vibrante);
+    padding: 5px 10px;
+}
+
+.form{
+    display: block;
     flex: 1 1 30%;
     max-width: 30%;
     
 }
 
-.form-contato input{
-    display: flex;
-    flex: 1 1 30%;
-    width: 500px;
+.form input, textarea{
+    width: 100%;
     margin: 15px;
-    
-}
-
-.enviar-form-contato{
-    
+    background-color: var(--lilas-claro);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
 }
 

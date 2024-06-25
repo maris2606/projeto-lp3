@@ -93,5 +93,9 @@ def como_utilizar():
 
     return render_template('como-utilizar.html')
 
+@app.route("/produtos/cadastro")
+def cadastro_produto():
+    return render_template('cadastro-produto.html')
+
 # rodar direto por aqui
 app.run()

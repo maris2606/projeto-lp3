@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastrar produtos{% endblock %}
+
+{% block header %}
+
+<h1>Cadastrar produtos</h1>   
+
+{% endblock %}
+
+{% block under_header %}
+<nav class="nav-produtos">
+    <a href="/produtos">voltar</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<h3>Cadastrar produtos:</h3>
+
+<div class="form">
+
+    <form action="/produtos" method="post">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+
+        
+        <button class="enviar-form" type="submit">enviar</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -8,9 +8,17 @@
     
 {% endblock %}
 
-{% block content %}
 
+{% block under_header %}
+<nav class="nav-produtos">
+    <a href="/produtos/cadastro">cadastro</a>
+</nav>
+{% endblock %}
+
+
+{% block content %}
 <!-- agora consegue trazer/acessar produtos do python-->
+
 <div class="produtos-container">
     {% if produtos %}
         {% for produto in produtos%}

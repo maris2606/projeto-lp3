@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
+    <header class="header-base">
         {% block header %}
     
         {% endblock %}
 
-        <nav>
+        <nav class="nav-base">
             <a href="/">homepage</a> 
             <a href="/contatos">contatos</a> 
             <a href="/entre-em-contato">entre em contato</a> 
@@ -26,6 +26,10 @@
             <a href="/gerar-cnpj">cnpj</a>
         </nav>
     </header>
+
+    {% block under_header %}
+    
+    {% endblock %}
 
     <section>
         {% block content %}
