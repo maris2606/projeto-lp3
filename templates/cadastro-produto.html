@@ -31,14 +31,23 @@
         <label for="categoria">Categoria:</label>
         <input type="text" name="categoria" id="categoria">
 
-        <label for="preco">Preço:</label>
-        <input type="number" name="preco" id="preco">
+        <div class="preco-estoque-container">
+            <div class="preco-estoque">
+                <label for="preco">Preço:</label>
+                <input type="number" name="preco" id="preco">
+            </div>
         
+            <div class="preco-estoque">
+                <label for="estoque">Estoque:</label>
+                <input type="number" name="estoque" id="estoque">
+            </div>
+        </div>
         <!-- <label for="descricao">Descrição:</label>
         <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea> -->
 
-        
-        <button class="enviar-form" type="submit">enviar</button>
+        <div class="enviar-container">
+            <button class="enviar-form" type="submit">enviar</button>
+        </div>
     </form>
 </div>
 

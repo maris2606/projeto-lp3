@@ -7,6 +7,7 @@
     --branco: #FFFF;
     --lilas-medio: #8765ca;
     --lilas-claro: #D2BDF4;
+    --lilas-super-claro: #f0e9fc;
 }
 
 body {
@@ -60,13 +61,13 @@ footer {
     color: var(--branco);
     align-items: center;
     justify-content: center;
-    padding: 35px 0  0 15px;
+    padding: 35px;
 }
 
 .produtos-container{
     display: flex;
     flex-flow: row wrap;
-    padding: 20px;
+    padding: 40px 0;
     gap: 25px;
 }
 
@@ -111,7 +112,7 @@ footer {
 }
 
 .nav-produtos {
-    display: flex;
+    display: none;
     flex: 1 1 5vh;
     flex-flow: row wrap;
     gap: 15px;
@@ -119,6 +120,59 @@ footer {
     align-content: center;
     justify-content: end;
     padding-inline: 40px;
+}
+
+.abrir-nav{ /* checkbox */
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 5rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+/*☰*/
+
+/* caixa colorida de fundo*/
+.abrir-nav-label::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 5rem;
+    right: 2rem;
+    background: var(--roxo-medio);
+    color: var(--branco);
+    font-size: 3rem;
+    line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+}
+/* tive que colocar o imagem de seta separado */
+.abrir-nav-label::before{
+    content: url('./keyboard-arrow-down_119013.png');
+    position: absolute;
+    z-index: 2;
+    top: 5rem;
+    right: 3.5rem;
+    filter: brightness(90);
+    width: 2rem;
+    height: 2rem;
+    scale: 0.07;
+
+}
+
+.abrir-nav:checked ~ .nav-produtos{
+    display: flex;
+}
+
+.abrir-nav:not(:checked)~ .nav-produtos{
+    display: none;
 }
 
 .nav-produtos a {
@@ -162,12 +216,16 @@ footer {
 .links-footer{
     display: flex;
     width: 30%;
-    flex-direction: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
     padding: 15px 0;
     justify-content: space-between;
 }
 
+.links-footer li{
+    padding: 15px 0;
+}
 
 .links-footer a{
     color: white;
@@ -178,6 +236,11 @@ footer {
     font-weight: 700;
 }
 
+.enviar-container{
+    display: flex;
+    justify-content: end;
+    width: 94.5%;
+}
 
 .enviar-form{
     background-color: var(--roxo);
@@ -195,18 +258,60 @@ footer {
 }
 
 .form{
-    display: block;
+    display: flex;
     flex: 1 1 30%;
-    max-width: 30%;
-    
+    width: 30%;
+    justify-content: space-between;
+    background-color: var(--lilas-super-claro);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form label{
+    display: inline-block;
+    min-width: min-content;
+    width: 15%;
+    margin-right: 15px;
 }
 
 .form input, textarea{
-    width: 100%;
-    margin: 15px;
+    flex: 1 1 70%;
+    width: 70%;
+    margin: 15px 0;
     background-color: var(--lilas-claro);
     padding: 10px 15px;
     border-radius: 5px;
     border: none;
 }
 
+.preco-estoque-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 94.5%;
+}
+
+.preco-estoque{
+    display: flex;
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.preco-estoque input{
+    flex: 1 1 35%;
+    width: 35%;
+    align-items: center;
+}
+
+
+.preco-estoque label{
+    display: inline-block;
+    width: 33%;
+    height: fit-content;
+    align-self: center;
+}
+
+.preco-estoque label[for='estoque']{
+    margin-right: 0;
+    padding-left: 10%;
+}

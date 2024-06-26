@@ -1,7 +1,6 @@
 # importa a classe flask do modulo flask
 import json
 from flask import Flask, render_template, request
-
 from validate_docbr import CPF, CNPJ
 
 # java
@@ -40,11 +39,11 @@ def contatos():
         return render_template('contatos.html', lojas_ZL = lojas_ZL, lojas_ZN = lojas_ZN, lojas_ZO = lojas_ZO, lojas_ZS = lojas_ZS, lojas_C= lojas_C)
 
 # página de produtos - /produtos
-lista_produtos = [
-        {'nome': 'coca cola', 'descricao': 'bebida'},
-        {'nome': 'chips', 'descricao': 'saguadinho'},
-        {'nome': 'bubalu', 'descricao': 'chicletchy'}
-    ]
+# lista_produtos = [
+#         {'nome': 'coca cola', 'descricao': 'bebida'},
+#         {'nome': 'chips', 'descricao': 'saguadinho'},
+#         {'nome': 'bubalu', 'descricao': 'chicletchy'}
+#     ]
 
 @app.route("/produtos")
 def produtos(): 
@@ -110,13 +109,23 @@ def salvar_produto():
     # descricao = request.form['descricao']
     marca = request.form['marca']
     categoria = request.form['categoria']
-    preco = request.form['preco']
-
+    preco = float(request.form['preco'])
+    estoque =  int(request.form['estoque'])
     # produto = {'nome': nome, 'descricao':descricao}
-    produto = {'nome': nome, 'marca':marca, }
-    lista_produtos.append(produto)
+    
+    with open('projeto_lp3/produtos.json', 'r', encoding='utf8') as arquivo:
+        
+        lista_produtos = json.loads(arquivo.read())
+        novo_produto = {'id': lista_produtos[-1]['id']+1,'nome': nome, 'marca':marca, 'categoria': categoria, 'preco':preco, 'estoque': estoque}
 
-    return render_template('produtos.html', produtos=lista_produtos)
+        lista_produtos.append(novo_produto)
+    
+    with open('projeto_lp3/produtos.json', 'w', encoding='utf8') as arquivo:
+        arquivo.write(json.dumps(lista_produtos, indent=2))
+
+    with open('projeto_lp3/produtos.json', 'r', encoding='utf8') as arquivo:
+        produtos = [{**produto, 'preco': format(produto['preco'], '.2f')} for produto in lista_produtos]
+        return render_template('produtos.html', produtos=produtos)
 
 
 # rodar direto por aqui
