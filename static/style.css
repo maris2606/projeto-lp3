@@ -23,6 +23,7 @@ body {
     background-color: var(--roxo-escuro);
     color: var(--branco);
     padding: 20px 0 35px 50px;
+    z-index: 3;
 }
 
 .nav-base {
@@ -67,7 +68,7 @@ footer {
 .produtos-container{
     display: flex;
     flex-flow: row wrap;
-    padding: 40px 0;
+    padding: 70px 0;
     gap: 25px;
 }
 
@@ -76,7 +77,6 @@ footer {
     flex-flow: column wrap;
     flex: 1 1 10vw;
     max-width: 10vw;
-    min-width: max-content;
     padding: 15px;
     background-color: var(--lilas-claro);
     border-radius: 10px;
@@ -113,18 +113,27 @@ footer {
 
 .nav-produtos {
     display: none;
-    flex: 1 1 5vh;
-    flex-flow: row wrap;
-    gap: 15px;
+    position: absolute;
+    flex: 1 1 100vw;
+    flex-direction: row-reverse;
+    height: 50px;
+    width: 100%;
     background-color: var(--roxo-medio);
-    align-content: center;
+    align-items: center;
     justify-content: end;
-    padding-inline: 40px;
+    top: 0;
+    
+    transition: top 1s ease-in-out;
+}
+
+.nav-produtos a {
+    width: fit-content;
+    margin-right: 25px;
 }
 
 .abrir-nav{ /* checkbox */
     position: absolute;
-    z-index: 3;
+    z-index: 7;
     opacity: 0;
     width: 2.5rem;
     height: 2.5rem;
@@ -139,7 +148,7 @@ footer {
 .abrir-nav-label::after{
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     top: 5rem;
     right: 2rem;
     background: var(--roxo-medio);
@@ -157,7 +166,7 @@ footer {
 .abrir-nav-label::before{
     content: url('./keyboard-arrow-down_119013.png');
     position: absolute;
-    z-index: 2;
+    z-index: 6;
     top: 5rem;
     right: 3.5rem;
     filter: brightness(90);
@@ -169,10 +178,21 @@ footer {
 
 .abrir-nav:checked ~ .nav-produtos{
     display: flex;
+
+    animation-name: descer_barra;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
+
+
 .abrir-nav:not(:checked)~ .nav-produtos{
-    display: none;
+    display: flex;
+    animation-name: subir_barra;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 .nav-produtos a {
@@ -314,4 +334,28 @@ footer {
 .preco-estoque label[for='estoque']{
     margin-right: 0;
     padding-left: 10%;
+}
+
+@keyframes descer_barra {
+    from{
+        top:0;
+    }
+    to{
+        top: 17.5vh;
+    }
+}
+
+@keyframes subir_barra {
+    0%{
+        top: 17.5vh;
+    }
+    40%{
+        top: 10vh;
+    }
+    90%{
+        top: 1vh;
+    }
+    100%{
+        display: none;
+    }
 }

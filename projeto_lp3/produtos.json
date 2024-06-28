@@ -190,5 +190,21 @@
     "categoria": "Doces",
     "preco": 5.0,
     "estoque": 12
+  },
+  {
+    "id": 25,
+    "nome": "Estojo Com El\u00e1sticos ",
+    "marca": "Kipling",
+    "categoria": "Papelaria",
+    "preco": 100.0,
+    "estoque": 2
+  },
+  {
+    "id": 26,
+    "nome": "Estojo Com El\u00e1sticos ",
+    "marca": "Kipling",
+    "categoria": "Papelaria",
+    "preco": 100.0,
+    "estoque": 2
   }
 ]
