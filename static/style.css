@@ -68,18 +68,20 @@ footer {
 .produtos-container{
     display: flex;
     flex-flow: row wrap;
+    align-content: space-between;
     padding: 70px 0;
-    gap: 25px;
 }
 
 .produto{
     display: flex;
     flex-flow: column wrap;
     flex: 1 1 10vw;
-    max-width: 10vw;
-    padding: 15px;
+    max-width: 25%;
+    margin: 10px;
+    padding: 25px;
     background-color: var(--lilas-claro);
     border-radius: 10px;
+    justify-content: space-between;
 }
 
 #link-comprar {
@@ -100,10 +102,6 @@ footer {
 #produto-preco{
     font-weight: 600;
     font-size: larger;
-}
-
-#produto-marca{
-    line-height: 5px;
 }
 
 #produto-categoria{
@@ -224,9 +222,9 @@ footer {
 .loja{
     display: flex;
     flex-flow: column;
-    flex: 1 1 15vw;
-    max-width: 15vw;
+    flex: 1 1 20vw;
     min-width: max-content;
+    max-width: 15vw;
     padding: 25px;
     border-radius: 10px;
     background-color: var(--lilas-claro);
@@ -357,5 +355,12 @@ footer {
     }
     100%{
         display: none;
+    }
+}
+
+@media (min-width: 1200px){
+    .produto{
+        max-width: 10vw;
+        padding: 20px;
     }
 }

@@ -3,6 +3,7 @@ import json
 from flask import Flask, render_template, request
 from validate_docbr import CPF, CNPJ
 
+
 # java
 # Aluno aluno = new Aluno();
 
