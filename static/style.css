@@ -126,7 +126,7 @@ footer {
 
 .nav-produtos a {
     width: fit-content;
-    margin-right: 25px;
+    margin-right: 35px;
 }
 
 .abrir-nav{ /* checkbox */
@@ -339,13 +339,13 @@ footer {
         top:0;
     }
     to{
-        top: 17.5vh;
+        top: 17.3vh;
     }
 }
 
 @keyframes subir_barra {
     0%{
-        top: 17.5vh;
+        top: 17.3vh;
     }
     40%{
         top: 10vh;

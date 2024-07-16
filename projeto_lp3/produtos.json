@@ -206,5 +206,13 @@
     "categoria": "Papelaria",
     "preco": 100.0,
     "estoque": 2
+  },
+  {
+    "id": 27,
+    "nome": "pipoquinha doce",
+    "marca": "emilia",
+    "categoria": "doces",
+    "preco": 10.0,
+    "estoque": 5
   }
 ]
